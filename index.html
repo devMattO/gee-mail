@@ -34,25 +34,29 @@
         function generateGeeMails(things){
             for (var i = 0; i < things.length; i++) {
                     //console.log(things[i]);
+                var emailContent = document.createElement('div');
+                    emailContent.className = 'emailContent';
+                    emailElement.appendChild(emailContent);
+
                 senderElement = document.createElement('div');
                 senderElement.className = 'sender';
                 senderElement.innerHTML = things[i].sender;
-                emailElement.appendChild(senderElement); 
+                emailContent.appendChild(senderElement); 
 
                 subElement = document.createElement('div');
                 subElement.className = 'subject';
                 subElement.innerHTML = things[i].subject;
-                senderElement.appendChild(subElement);
+                emailContent.appendChild(subElement);
                 
                 dateElement = document.createElement('div');
                 dateElement.className = 'date';
                 dateElement.innerHTML = things[i].date;
-                subElement.appendChild(dateElement);
+                emailContent.appendChild(dateElement);
 
                 bodyElement = document.createElement('div');
                 bodyElement.className = 'body';
                 bodyElement.innerHTML = things[i].body;
-                subElement.appendChild(bodyElement);
+                emailContent.appendChild(bodyElement);
 
 
 
@@ -60,10 +64,17 @@
         }
 generateGeeMails(geemails);
 
-document.getElementByClassName('body').addEventListener('click',makeBodyAppear);
+    document.getElementsByClassName('emailContent').addEventListener('click',makeBodyAppear);
 
-    function makeBodyAppear(){
-        
+    function toggle(emailContent){
+
+        var el = document.getElementsByClassName('bodyElement');
+        if (el.style.display != 'none'){
+            el.style.display = 'none';
+        }else{
+            el.style.display = '';
+        }
+
     }
 
     
