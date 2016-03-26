@@ -4,15 +4,117 @@
 		<link href="css/style.css" rel="stylesheet" media="screen">
     <script>
       window.onload = function(){
-        // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
-        // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
+       
+        var firstDiv = document.createElement('div');
+        var firstSpan = document.createElement('span');
+        var geemailHeader = document.createElement('h1');
+        var firstText = document.createTextNode('Gee-Mail');
+
+        firstDiv.id = 'title';
+
+        geemailHeader.appendChild(firstText);
+        firstSpan.appendChild(geemailHeader);
+        firstDiv.appendChild(firstSpan);
         
-      };
+        document.body.appendChild(firstDiv);
+
+        
+
+        var emailElement = document.createElement('div');
+        emailElement.id = 'emailsGoHere';
+        document.body.appendChild(emailElement);
+        
+
+        function generateGeeMails(things){
+            for (var i = 0; i < things.length; i++) {
+                    console.log(things[i]);
+                senderElement = document.createElement('div');
+                senderElement.id = 'sender';
+                senderElement.innerHTML = things[i].sender;
+                emailElement.appendChild(senderElement); 
+
+                subElement = document.createElement('div');
+                subElement.id = 'subject';
+                subElement.innerHTML = things[i].subject;
+                senderElement.appendChild(subElement);
+
+                bodyElement = document.createElement('div');
+                bodyElement.id = 'body';
+                bodyElement.innerHTML = things[i].body;
+                subElement.appendChild(bodyElement);
+
+                dateElement = document.createElement('div');
+                dateElement.id = 'date';
+                dateElement.innerHTML = things[i].date;
+                emailElement.appendChild(dateElement);
+
+
+            }
+        }
+generateGeeMails(geemails);
+
+    /*function shootsArr(arr1,arr2,arr3){    
+        var subElement;
+        var senderElement;
+        var bodyElement;
+        for (var i = 0; i < arr1.length; i++) {
+            
+            senderElement = document.createElement('div');
+            senderElement.id = 'sender';
+            senderElement.innerHTML = arr2[i];
+            emailElement.appendChild(senderElement); 
+
+            subElement = document.createElement('div');
+            subElement.id = 'subject';
+            subElement.innerHTML = arr1[i];
+            emailElement.appendChild(subElement);
+
+            bodyElement = document.createElement('div');
+            bodyElement.id = 'body';
+            bodyElement.innerHTML = arr3[i];
+            emailElement.appendChild(bodyElement);
+
+
+
+
+        }
+    }
+        shootsArr(subject,sender,body); */
+       
+
+
+    /*function senderArr(arr){    
+        var senderElement;    
+            for (var i = 0; i < arr.length; i++) {  
+                senderElement = document.createElement('div');
+                senderElement.id = 'sender';
+                senderElement.innerHTML = arr[i];
+                emailElement.appendChild(senderElement);    
+
+            }
+        }   
+
+        senderArr(sender);
+
+
+    function bodyArr(arr){
+        var bodyElement;
+            for (var i = 0; i < arr.length; i++) {
+                bodyElement = document.createElement('div');
+                bodyElement.id = 'body';
+                bodyElement.innerHTML = arr[i];
+                emailElement.appendChild(bodyElement);
+            }
+    }
+
+    bodyArr(body);*/
+
+      }; 
+
     </script>
 	</head>
 	<body>
 		<div class="container" id="main">
-			Build Me!
 		</div>
 	</body>
 </html>
