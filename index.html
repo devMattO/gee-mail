@@ -22,7 +22,7 @@
 
         var emailElement = document.createElement('div');
         var newPara = document.createElement('p');
-        var inboxText = document.createTextNode('Inbox:');
+        var inboxText = document.createTextNode('Inbox: ' + numberOfChildren);
         var createLine = document.createElement('hr');
             emailElement.id = 'emailsGoHere';
         emailElement.appendChild(newPara);
@@ -58,25 +58,31 @@
                 bodyElement.innerHTML = things[i].body;
                 emailContent.appendChild(bodyElement);
 
+                
 
 
             }
         }
 generateGeeMails(geemails);
 
-    document.getElementsByClassName('emailContent').addEventListener('click',makeBodyAppear);
 
-    function toggle(emailContent){
 
-        var el = document.getElementsByClassName('bodyElement');
-        if (el.style.display != 'none'){
-            el.style.display = 'none';
+    var emailMessages = document.getElementsByClassName('emailContent');
+    for (var i = 0; i < emailMessages.length; i++) {
+        emailMessages[i].addEventListener('click', showMessage);
+    } //closes for loop
+
+    function showMessage(event){
+        var showBody = this.querySelectorAll('.body')[0];
+        if(showBody.classList.contains('show') === false){
+            return showBody.classList.add('show');
         }else{
-            el.style.display = '';
+            return showBody.classList.remove('show');
         }
+    } //this closes the function
 
-    }
-
+    var numberOfChildren = document.getElementsByClassName('emailContent').length;
+    console.log(numberOfChildren);
     
 
       }; 
