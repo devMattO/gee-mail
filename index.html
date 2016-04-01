@@ -5,7 +5,7 @@
     <script>
       window.onload = function(){
        
-        var firstDiv = document.createElement('div');
+        /*var firstDiv = document.createElement('div');
         var firstSpan = document.createElement('span');
         var geemailHeader = document.createElement('h1');
         var firstText = document.createTextNode('Gee-Mail');
@@ -16,18 +16,18 @@
         firstSpan.appendChild(geemailHeader);
         firstDiv.appendChild(firstSpan);
         
-        document.body.appendChild(firstDiv);
+        document.body.appendChild(firstDiv); */
 
         
 
         var emailElement = document.createElement('div');
-        var newPara = document.createElement('p');
-        var inboxText = document.createTextNode('Inbox: ' + numberOfChildren);
+        //var newPara = document.createElement('p');
+        //var inboxText = document.createTextNode('Inbox: ' + numberOfChildren);
         var createLine = document.createElement('hr');
-            emailElement.id = 'emailsGoHere';
-        emailElement.appendChild(newPara);
-        newPara.appendChild(inboxText);
-        newPara.appendChild(createLine);
+            //emailElement.id = 'emailsGoHere';
+        //emailElement.appendChild(newPara);
+        //newPara.appendChild(inboxText);
+        emailElement.appendChild(createLine);
         document.body.appendChild(emailElement);
         
 
@@ -61,8 +61,8 @@
                 
 
 
-            }
-        }
+            } // closes 'for' loop
+        } //closes generateGeeMails function
 generateGeeMails(geemails);
 
 
@@ -78,18 +78,89 @@ generateGeeMails(geemails);
             return showBody.classList.add('show');
         }else{
             return showBody.classList.remove('show');
-        }
-    } //this closes the function
+        } //closes if else statement
+    } //this closes the showMessage function
 
-    var numberOfChildren = document.getElementsByClassName('emailContent').length;
-    console.log(numberOfChildren);
+    var inboxCount = document.getElementById('count');
+    console.log(inboxCount);
+    inboxCount = geemails.length;
+    var totalCount = document.createTextNode(inboxCount);
+    count.appendChild(totalCount);
+
+    
+    //console.log(getNewMessage());
+    
     
 
-      }; 
+    //////////////////////////////////////
+
+
+    function addAnotherEmail(){
+            
+            var newMessage = getNewMessage(); 
+
+                var emailContent = document.createElement('div');
+                    emailContent.className = 'emailContent';
+                    emailElement.appendChild(emailContent);
+
+                
+                senderElement = document.createElement('div');
+                senderElement.className = 'sender';
+                senderElement.innerHTML = newMessage.sender;
+                emailContent.appendChild(senderElement); 
+
+                subElement = document.createElement('div');
+                subElement.className = 'subject';
+                subElement.innerHTML = newMessage.subject;
+                emailContent.appendChild(subElement);
+                
+                dateElement = document.createElement('div');
+                dateElement.className = 'date';
+                dateElement.innerHTML = newMessage.date;
+                emailContent.appendChild(dateElement);
+
+                bodyElement = document.createElement('div');
+                bodyElement.className = 'body';
+                bodyElement.innerHTML = newMessage.body;
+                emailContent.appendChild(bodyElement);
+
+                inboxCount++;
+                count.innerHTML = inboxCount;
+
+                var emailMessages = document.getElementsByClassName('emailContent');
+                for (var i = 0; i < emailMessages.length; i++) {
+                emailMessages[i].addEventListener('click', showMessage);
+                }
+
+    }
+
+
+setInterval(addAnotherEmail, 3000);
+
+////////////////////// changes background color vv //////////////////////
+
+   /* var myVar = setInterval(function(){ setColor();}, 300);
+ 
+    function setColor() {
+    var x = document.body;
+    x.style.backgroundColor = x.style.backgroundColor == "yellow" ? "cyan" : "yellow";
+} //closes setColor() function 
+ 
+function stopColor() {
+  clearInterval(myVar);
+} */
+    
+    console.log(getNewMessage().sender);
+    
+
+      }; //closes window.onload function
 
     </script>
 	</head>
 	<body>
+        <h1>Geemail</h1>
+        <div id="inbox"><b>Inbox: </b><span id="count"></span>
+        </div>
 		<div class="container" id="main">
 
 		</div>
