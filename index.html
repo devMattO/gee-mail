@@ -24,10 +24,12 @@
         //var newPara = document.createElement('p');
         //var inboxText = document.createTextNode('Inbox: ' + numberOfChildren);
         var createLine = document.createElement('hr');
-            //emailElement.id = 'emailsGoHere';
+        var mainElement = document.getElementById('main');
+            emailElement.id = 'emailsGoHere';
         //emailElement.appendChild(newPara);
         //newPara.appendChild(inboxText);
         emailElement.appendChild(createLine);
+        mainElement.appendChild(emailElement);
         document.body.appendChild(emailElement);
         
 
@@ -92,7 +94,7 @@ generateGeeMails(geemails);
     
     
 
-    //////////////////////////////////////
+    ////////////////////////////////////// 
 
 
     function addAnotherEmail(){
@@ -139,7 +141,7 @@ setInterval(addAnotherEmail, 3000);
 
 ////////////////////// changes background color vv //////////////////////
 
-   /* var myVar = setInterval(function(){ setColor();}, 300);
+    var myVar = setInterval(function(){ setColor();}, 300);
  
     function setColor() {
     var x = document.body;
@@ -148,9 +150,9 @@ setInterval(addAnotherEmail, 3000);
  
 function stopColor() {
   clearInterval(myVar);
-} */
+} 
     
-    console.log(getNewMessage().sender);
+    console.log(getNewMessage().sender); 
     
 
       }; //closes window.onload function
