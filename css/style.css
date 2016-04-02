@@ -1,18 +1,96 @@
-.body{
+h1 {
+	font-family: Courier;
+	text-align: center;
+	background-color: white;
+	border-radius: 5px;
+	text-shadow: 2px 2px 3px #666666;
+	font-size: 50px;
+	border: 2px inset gray;
+}
+#g{
+	color: blue;
+}
+#e{
+	color: red;
+}
+#second_e{
+	color: yellow;
+}
+#m{
+	color: blue;
+}
+#a{
+	color: green;
+}
+#i{
+	color: yellow;
+}
+#l{
+	color:red;
+}
+
+body{
+	background-color: whitesmoke;
+}
+
+#emailsGoHere{
+	background-image: url('http://www.zingerbug.com/Backgrounds/background_images/tie_dye_watermark_seamless.jpg');
+}
+
+div.body{
 	display: none;
 }
-.emailContent {
-	display: -moz-box;
+
+div.body.show{
+	display: block;
+	border: 2px ridge black;
+	border-radius: 5px;
+	padding: 8px;
+	background-color: white;
 }
+
+#inbox{
+	font-size: 24px;
+	display: inline;
+	background-image: url('http://www.zingerbug.com/Backgrounds/background_images/tie_dye_watermark_seamless.jpg');
+	border: 1px inset black;
+	border-radius: 5px;
+	padding: 5px;
+
+
+}
+
+#main{
+	height: 12px;
+}
+
+.emailContent{
+	font-family: Verdana;
+	border: 3px ridge black;
+}
+
 .sender{
-	padding-right: 20px;
+	background-color: ;
+	float: left;
 	font-weight: bold;
-	font-family: sans-serif;
+	padding-right: ;
+	margin-right: ;
+	margin-left: 2em;
+
+	
+
 }
+
 .subject{
-	padding-right: 20px;
-	font-family: sans-serif;
+	position: relative;
+	width: 300px;
+	left: 50px;
+	text-align: left;
+
 }
+
 .date{
-	font-size: 12px;
+	background-color: ;
+	float: right;
+	font-size: 8px;
 }
