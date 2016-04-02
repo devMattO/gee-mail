@@ -5,30 +5,11 @@
     <script>
       window.onload = function(){
        
-        /*var firstDiv = document.createElement('div');
-        var firstSpan = document.createElement('span');
-        var geemailHeader = document.createElement('h1');
-        var firstText = document.createTextNode('Gee-Mail');
-
-            firstDiv.id = 'title';
-
-        geemailHeader.appendChild(firstText);
-        firstSpan.appendChild(geemailHeader);
-        firstDiv.appendChild(firstSpan);
-        
-        document.body.appendChild(firstDiv); */
-
-        
-
         var emailElement = document.createElement('div');
-        //var newPara = document.createElement('p');
-        //var inboxText = document.createTextNode('Inbox: ' + numberOfChildren);
-        var createLine = document.createElement('hr');
+        //var createLine = document.createElement('hr');
         var mainElement = document.getElementById('main');
             emailElement.id = 'emailsGoHere';
-        //emailElement.appendChild(newPara);
-        //newPara.appendChild(inboxText);
-        emailElement.appendChild(createLine);
+        //emailElement.appendChild(createLine);
         mainElement.appendChild(emailElement);
         document.body.appendChild(emailElement);
         
@@ -40,17 +21,17 @@
                     emailContent.className = 'emailContent';
                     emailElement.appendChild(emailContent);
 
-                senderElement = document.createElement('div');
+                senderElement = document.createElement('span');
                 senderElement.className = 'sender';
                 senderElement.innerHTML = things[i].sender;
                 emailContent.appendChild(senderElement); 
 
-                subElement = document.createElement('div');
+                subElement = document.createElement('span');
                 subElement.className = 'subject';
                 subElement.innerHTML = things[i].subject;
                 emailContent.appendChild(subElement);
                 
-                dateElement = document.createElement('div');
+                dateElement = document.createElement('span');
                 dateElement.className = 'date';
                 dateElement.innerHTML = things[i].date;
                 emailContent.appendChild(dateElement);
@@ -106,17 +87,17 @@ generateGeeMails(geemails);
                     emailElement.appendChild(emailContent);
 
                 
-                senderElement = document.createElement('div');
+                senderElement = document.createElement('span');
                 senderElement.className = 'sender';
                 senderElement.innerHTML = newMessage.sender;
                 emailContent.appendChild(senderElement); 
 
-                subElement = document.createElement('div');
+                subElement = document.createElement('span');
                 subElement.className = 'subject';
                 subElement.innerHTML = newMessage.subject;
                 emailContent.appendChild(subElement);
                 
-                dateElement = document.createElement('div');
+                dateElement = document.createElement('span');
                 dateElement.className = 'date';
                 dateElement.innerHTML = newMessage.date;
                 emailContent.appendChild(dateElement);
@@ -141,7 +122,7 @@ setInterval(addAnotherEmail, 3000);
 
 ////////////////////// changes background color vv //////////////////////
 
-    var myVar = setInterval(function(){ setColor();}, 300);
+    /*var myVar = setInterval(function(){ setColor();}, 100);
  
     function setColor() {
     var x = document.body;
@@ -152,19 +133,22 @@ function stopColor() {
   clearInterval(myVar);
 } 
     
-    console.log(getNewMessage().sender); 
+    console.log(getNewMessage().sender); */
+
     
+
 
       }; //closes window.onload function
 
     </script>
 	</head>
 	<body>
-        <h1>Geemail</h1>
+        <h1><span id='g'>G</span><span id='e'>E</span><span id='second_e'>E</span><span id='m'>M</span><span id='a'>A</span><span id='i'>I</span><span id='l'>L</span></h1>
         <div id="inbox"><b>Inbox: </b><span id="count"></span>
         </div>
 		<div class="container" id="main">
 
 		</div>
+
 	</body>
 </html>
