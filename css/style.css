@@ -65,6 +65,8 @@ div.body.show{
 }
 
 .emailContent{
+	-webkit-column-span: all; /* Chrome, Safari, Opera */
+    column-span: all;
 	font-family: Verdana;
 	border: 3px ridge black;
 }
@@ -74,18 +76,20 @@ div.body.show{
 	float: left;
 	font-weight: bold;
 	padding-right: ;
-	margin-right: ;
+	margin-right: 2em;
 	margin-left: 2em;
-
-	
 
 }
 
 .subject{
-	position: relative;
-	width: 300px;
-	left: 50px;
+	position: ;
+	width: ;
+	left: ;
 	text-align: left;
+	display: inline-table;
+	-webkit-column-count: ; /* Chrome, Safari, Opera */
+    -moz-column-count: ; /* Firefox */
+    column-count: ;
 
 }
 
