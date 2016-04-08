@@ -71,20 +71,26 @@ div.body.show{
 	border: 3px ridge black;
 }
 
+
+
+
+
+
 .sender{
 	background-color: ;
 	float: left;
 	font-weight: bold;
+	width: 30%;
 	padding-right: ;
 	margin-right: 2em;
 	margin-left: 2em;
 
-}
+} 
 
 .subject{
 	position: ;
-	width: ;
-	left: ;
+	width: 60%;
+	float: left;
 	text-align: left;
 	display: inline-table;
 	-webkit-column-count: ; /* Chrome, Safari, Opera */
@@ -95,6 +101,8 @@ div.body.show{
 
 .date{
 	background-color: ;
-	float: right;
+	float:;
 	font-size: 8px;
+	font-weight: bold;
+	padding-right: 50px;
 }
